@@ -29,14 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
         counter.innerText = newValue;
     }
 
-
     plus.onclick = function addCounter() {
         let newValue = parseInt(counter.innerText) + 1;
         counter.innerText = newValue;
     }
 
-    heart.onclick = function likeNumber(counter,freq) {
-        console.log(`${counter} has been liked ${freq} times.`)
+    heart.onclick = function likeNumber () {
+        let currentValue = parseInt(counter.innerText)
+        let frequency = currentValue.value
+        console.log(`${currentValue} has been liked ${frequency} times.`)
     }
 
 
