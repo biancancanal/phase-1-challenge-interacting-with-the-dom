@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let plus = document.getElementById('plus');
     let heart = document.getElementById('heart');
     let pause = document.getElementById('pause');
-    let comments = document.getElementsByClassName('comments');
-    let likes = document.getElementsByClassName('likes');
+    let comments = document.querySelector('.comments');
+    let likes = document.querySelector('.likes');
     function incrementCounter() {
         counter.innerText = parseInt(counter.innerText) + 1
     }
@@ -36,10 +36,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     heart.onclick = function likeNumber () {
         let currentValue = parseInt(counter.innerText)
-        let frequency = currentValue.value
-        console.log(`${currentValue} has been liked ${frequency} times.`)
+        let frequency = currentValue
+        if (document.querySelector(`[data-count="${currentValue}"]`)) {
+           let selected = document.querySelector(`[data-count="${currentValue}"]`)
+            selected = 
+        }
+        let li = document.createElement("li")
+        li.innerText = `${currentValue} has been liked ${frequency} times.`
+        li.setAttribute("data-count", currentValue)
+        likes.appendChild(li) 
+        console.log("li", li)
     }
-
 
 
   });
